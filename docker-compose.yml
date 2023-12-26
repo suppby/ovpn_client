@@ -1,0 +1,21 @@
+services:
+  ovpn_client:
+    image: ovpn_client
+    container_name: ovpn_client
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun
+    environment:
+      - CONFIG_FILE=global.ovpn
+    volumes:
+      - ./config:/config
+    restart: unless-stopped
+
+#  test_vpn:
+#    image: alpine:3.19
+#    container_name: test_vpn
+#    command: "tail -f /dev/null"
+#    depends_on:
+#      - ovpn_client
+#    network_mode: "service:ovpn_client"
