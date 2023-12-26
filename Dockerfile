@@ -11,4 +11,4 @@ RUN apk add --no-cache \
 
 COPY . /usr/local/bin/
 
-ENTRYPOINT [ "entry.sh" ]
+ENTRYPOINT ["entry.sh"]
