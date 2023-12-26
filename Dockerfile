@@ -9,6 +9,6 @@ RUN apk add --no-cache \
     nano \
     curl
 
-COPY . /usr/local/bin/
+COPY entry.sh /usr/local/bin/entry.sh
 RUN ["chmod", "+x", "/usr/local/bin/entry.sh"]
 ENTRYPOINT ["entry.sh"]
