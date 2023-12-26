@@ -10,5 +10,5 @@ RUN apk add --no-cache \
     curl
 
 COPY . /usr/local/bin/
-
+RUN ["chmod", "+x", "/usr/local/bin/entry.sh"]
 ENTRYPOINT ["entry.sh"]
